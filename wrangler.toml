@@ -1,0 +1,18 @@
+name = "uptime-bot"
+main = "src/index.js"
+compatibility_date = "2026-07-31"
+compatibility_flags = ["nodejs_compat"]
+
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+# Checks run every minute. The code decides which monitors are actually due
+# based on plan (free = every 5 min, paid = every 1 min).
+[triggers]
+crons = ["* * * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "uptime-bot-db"
+database_id = "b76c3087-aef5-43f3-bf31-5fd1e687ab56"

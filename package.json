@@ -1,0 +1,15 @@
+{
+  "name": "uptime-bot",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev --config wrangler.toml",
+    "deploy": "wrangler deploy --config wrangler.toml",
+    "db:init": "wrangler d1 execute uptime-bot-db --config wrangler.toml --local --file=./schema.sql",
+    "db:init:remote": "wrangler d1 execute uptime-bot-db --config wrangler.toml --remote --file=./schema.sql",
+    "check": "wrangler deploy --config wrangler.toml --dry-run"
+  },
+  "devDependencies": {
+    "wrangler": "^4.116.0"
+  }
+}
